@@ -7,7 +7,7 @@ Dibangun menggunakan **Flutter** untuk frontend dan **Golang (Gin)** untuk backe
 
 ## 📱 Preview
 
-> *(Tambahkan screenshot di sini nanti ya — dashboard, auth, profile, dll)*
+
 
 ---
 
