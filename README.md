@@ -56,7 +56,7 @@ FinTrack bukan sekadar aplikasi pencatatan keuangan biasa. Project ini menunjukk
 
 * Edit profile
 * Upload foto profil
-* Preferences (dark mode, dll)
+* Preferences (dark mode, language (on process))
 
 ---
 
@@ -98,7 +98,7 @@ Service (API Layer)
 ### Backend Architecture
 
 ```
-Routes → Controllers → Models → Database
+Routes → handlers → Models → Database
 ```
 
 ---
@@ -149,19 +149,6 @@ flutter run
 * JWT token-based authentication
 * Secure storage di client
 * Protected routes di backend
-
----
-
-## 📡 API Highlights
-
-| Method | Endpoint      | Description          |
-| ------ | ------------- | -------------------- |
-| POST   | /register     | Register user        |
-| POST   | /login        | Login user           |
-| GET    | /profile      | Get profile          |
-| PUT    | /profile      | Update profile       |
-| GET    | /transactions | Get all transactions |
-| POST   | /transactions | Create transaction   |
 
 ---
 
