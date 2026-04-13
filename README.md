@@ -1,7 +1,9 @@
-# FinTrack_App
+# 🚀 FinTrack App
 
-FinTrack adalah aplikasi mobile modern untuk manajemen keuangan pribadi yang dirancang dengan fokus pada **user experience, performa, dan clean architecture**.
-Dibangun menggunakan **Flutter** untuk frontend dan **Golang (Gin)** untuk backend, FinTrack menghadirkan sistem yang cepat, aman, dan scalable.
+FinTrack adalah aplikasi modern untuk manajemen keuangan pribadi yang dapat berjalan di **Mobile (Android)** dan **Web**.
+Dirancang dengan fokus pada **user experience, performa, dan clean architecture**, FinTrack menggunakan **Flutter** sebagai frontend (cross-platform) dan **Golang (Gin)** sebagai backend.
+
+Dengan arsitektur ini, satu codebase frontend dapat digunakan untuk **multi-platform deployment**, menjadikan aplikasi lebih efisien dan scalable.
 
 ---
 
@@ -15,7 +17,7 @@ Dibangun menggunakan **Flutter** untuk frontend dan **Golang (Gin)** untuk backe
 
 FinTrack bukan sekadar aplikasi pencatatan keuangan biasa. Project ini menunjukkan kemampuan dalam:
 
-* ✅ Fullstack Mobile Development
+* ✅ Fullstack Cross-Platform Development (Mobile & Web)
 * ✅ REST API Design & Integration
 * ✅ Authentication System (JWT + OAuth)
 * ✅ State Management (Provider)
@@ -40,6 +42,7 @@ FinTrack bukan sekadar aplikasi pencatatan keuangan biasa. Project ini menunjukk
 * Kategori & deskripsi transaksi
 * Delete transaksi
 * Real-time data sync dengan backend
+* History
 
 ---
 
@@ -56,15 +59,15 @@ FinTrack bukan sekadar aplikasi pencatatan keuangan biasa. Project ini menunjukk
 
 * Edit profile
 * Upload foto profil
-* Preferences (dark mode, language (on process))
+* Preferences (dark mode, language *(on process)*)
 
 ---
 
 ## 🧠 Tech Stack
 
-### 📱 Frontend
+### 📱 Frontend (Mobile & Web)
 
-* Flutter
+* Flutter (Cross-platform)
 * Provider (State Management)
 * Dio (Networking)
 * Responsive UI System
@@ -98,34 +101,49 @@ Service (API Layer)
 ### Backend Architecture
 
 ```
-Routes → handlers → Models → Database
+Routes → Handlers → Models → Database
 ```
 
 ---
 
 ## ⚙️ Getting Started
 
-### 🔧 Backend Setup
+### 🔧 1. Backend Setup
+
+Masuk ke folder backend:
 
 ```
 cd fintrack-backend
 go mod tidy
 ```
 
-Buat file `.env`:
+Buat file:
+
+📄 `fintrack-backend/.env`
 
 ```
+# APP
 PORT=8080
+APP_ENV=development
+FRONTEND_URL=YOUR-URL or http://localhost:xxxx
+
+# DATABASE
 DB_HOST=localhost
 DB_USER=postgres
 DB_PASSWORD=yourpassword
 DB_NAME=fintrack
 DB_PORT=5432
+DB_SSLMODE=disable
+
+# AUTH
 JWT_SECRET=your_secret_key
-GOOGLE_CLIENT_ID=your_google_client_id
+
+# EMAIL
+SMTP_EMAIL=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
 ```
 
-Run server:
+Jalankan server:
 
 ```
 go run main.go
@@ -133,12 +151,93 @@ go run main.go
 
 ---
 
-### 📱 Frontend Setup
+### 📱 2. Frontend Setup (Mobile & Web)
+
+Masuk ke folder project Flutter:
 
 ```
 cd FinTrack_App
 flutter pub get
+```
+
+Buat file 📄 `.env` pada root project Flutter:
+
+```
+API_BASE_URL=YOUR_URL
+API_BASE_URL_WEB=YOUR_URL
+```
+
+### 🔍 Penjelasan
+
+Aplikasi menggunakan **base URL yang berbeda** tergantung platform:
+
+#### 📱 Mobile (Android / iOS)
+
+```env
+API_BASE_URL=http://192.168.x.x:8080/api
+```
+
+* Gunakan **IP address lokal (LAN)** dari komputer/server backend kamu
+* Port `8080` adalah port default backend (sesuai `.env` backend)
+* Contoh:
+
+  ```
+  http://192.168.93.45:8080/api
+  ```
+
+📍 Cara mengetahui IP lokal:
+
+Windows: ipconfig
+Mac/Linux: ifconfig / ip a
+
+---
+
+#### 🌐 Web (Browser)
+
+```env
+API_BASE_URL_WEB=http://localhost:8080/api
+```
+
+* Web berjalan di browser yang sama dengan backend
+* Bisa langsung menggunakan `localhost`
+* Tetap menggunakan port yang sama (`8080`)
+
+---
+
+### ⚠️ Catatan Penting
+
+* Pastikan backend berjalan di:
+
+  ```
+  http://localhost:8080
+  ```
+* Pastikan device dan backend berada di **jaringan WiFi yang sama**
+* Jika menggunakan emulator:
+
+  * Android Emulator bisa pakai:
+
+    ```
+    http://10.0.2.2:8080/api
+    ```
+* Jika deploy ke server (production):
+
+  ```env
+  API_BASE_URL=https://your-domain.com/api
+  API_BASE_URL_WEB=https://your-domain.com/api
+  ```
+
+```
+
+#### ▶️ Run Mobile
+
+```
 flutter run
+```
+
+#### 🌐 Run Web
+
+```
+flutter run -d chrome
 ```
 
 ---
@@ -149,6 +248,16 @@ flutter run
 * JWT token-based authentication
 * Secure storage di client
 * Protected routes di backend
+* Environment-based configuration (.env separation)
+
+---
+
+## 📦 Important Notes
+
+* Gunakan `API_BASE_URL` untuk **mobile device (IP lokal)**
+* Gunakan `API_BASE_URL_WEB` untuk **web (localhost)**
+* Pastikan backend sudah running sebelum frontend
+* Jangan commit file `.env` ke repository (gunakan `.gitignore`)
 
 ---
 
@@ -160,7 +269,7 @@ Saya adalah developer yang fokus pada:
 * Backend Development (Golang, Node.js)
 * System Design & Clean Architecture
 
-Project ini dibuat sebagai bagian dari portfolio untuk menunjukkan kemampuan dalam membangun aplikasi fullstack end-to-end.
+Project ini dibuat sebagai bagian dari portfolio untuk menunjukkan kemampuan dalam membangun aplikasi **fullstack cross-platform end-to-end**.
 
 ---
 
