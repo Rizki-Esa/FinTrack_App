@@ -1,5 +1,5 @@
 import 'dart:typed_data';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:frontend_fintrack/services/token_storage.dart';
@@ -7,9 +7,9 @@ import 'package:frontend_fintrack/services/token_storage.dart';
 class ApiService {
   static String get baseUrl {
     if (kIsWeb) {
-      return "http://localhost:8080/api";
+      return dotenv.env['API_BASE_URL_WEB']!;
     } else {
-      return "http://192.168.93.45:8080/api"; // ganti IP kamu
+      return dotenv.env['API_BASE_URL']!;
     }
   }
 

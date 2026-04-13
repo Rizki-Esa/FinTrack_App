@@ -2,11 +2,11 @@ package utils
 
 import (
 	"time"
-
+	"os"
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var jwtSecret = []byte("fintrack_super_secret")
+var jwtSecret = []byte(os.Getenv("JWT_SECRET"))
 
 func GenerateJWT(userID uint) (string, error) {
 

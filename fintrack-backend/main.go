@@ -1,28 +1,47 @@
 package main
 
 import (
+	"log"
+	"os"
+	"time"
+
 	"fintrack-backend/config"
 	"fintrack-backend/routes"
-	"github.com/joho/godotenv"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"time"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	godotenv.Load()
-	// router
+
+	// ===== LOAD ENV =====
+	err := godotenv.Load()
+	if err != nil {
+		log.Println("No .env file found (using system environment)")
+	}
+
+	// ===== SET GIN MODE =====
+	appEnv := os.Getenv("APP_ENV")
+	if appEnv == "production" {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
+	// ===== INIT ROUTER =====
 	r := gin.Default()
 
-	// connect database
+	// ===== CONNECT DATABASE =====
 	config.ConnectDB()
 
 	// ===== MIDDLEWARE =====
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
 
-	// ===== CORS =====
+	// 🔐 FIX SECURITY WARNING
+	r.SetTrustedProxies(nil)
+
 	r.Use(cors.New(cors.Config{
+		//AllowOrigins:     []string{FRONTEND_URL},
 		AllowOrigins:     []string{"*"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
@@ -31,12 +50,18 @@ func main() {
 		MaxAge:           12 * time.Hour,
 	}))
 
-	// serve static files dari folder ./uploads
+	// ===== STATIC FILES =====
 	r.Static("/uploads", "./uploads")
 
-	// setup routes
+	// ===== ROUTES =====
 	routes.SetupRoutes(r)
 
-	// run server
-	r.Run(":8080")
+	// ===== RUN SERVER =====
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // default
+	}
+
+	log.Println("Server running on port:", port)
+	r.Run(":" + port)
 }

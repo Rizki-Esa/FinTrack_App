@@ -52,6 +52,7 @@ dependencies:
   firebase_core: ^4.6.0
   firebase_auth: ^6.3.0
   web: ^1.1.1
+  flutter_dotenv: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -82,6 +83,7 @@ flutter:
   assets:
     - assets/images/google.png
     - assets/fonts/
+    - .env
 
   fonts:
     - family: Roboto

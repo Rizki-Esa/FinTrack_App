@@ -89,7 +89,9 @@ class CustomDialogButton {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop();
-                        onConfirm();
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          onConfirm();
+                        });
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: isWarning ? Colors.red : Colors.blue,

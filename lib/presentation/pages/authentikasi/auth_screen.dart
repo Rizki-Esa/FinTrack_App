@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../responsive_helper.dart';
 import '../../../services/auth_service.dart';
-import '../../../services/google_button.dart';
+import '../../widgets/button/google_button.dart';
 import '../../controllers/auth_controller.dart';
 import '../../widgets/pop_up/custom_dialog.dart';
 import '../navigation.dart';

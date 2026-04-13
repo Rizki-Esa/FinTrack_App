@@ -15,15 +15,17 @@ class CustomDialog {
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (BuildContext context) {
-        final responsive = Responsive(context);
+      builder: (dialogContext) {
+        final responsive = Responsive(dialogContext);
+
         Future.delayed(duration, () {
-          if (Navigator.of(context).canPop()) {
-            Navigator.of(context).pop();
-            if (onComplete != null) {
-              onComplete();
-            }
+          if (!dialogContext.mounted) return;
+
+          if (Navigator.of(dialogContext).canPop()) {
+            Navigator.of(dialogContext).pop();
           }
+
+          onComplete?.call();
         });
 
         return AlertDialog(

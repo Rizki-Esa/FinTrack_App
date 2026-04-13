@@ -20,10 +20,10 @@ class Navigation extends StatefulWidget {
   State<Navigation> createState() => _NavigationState();
 }
 
-late AnimationController _pressController;
-
 class _NavigationState extends State<Navigation> with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
+  late AnimationController _pressController;
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final List<String> _pages = [
@@ -49,10 +49,12 @@ class _NavigationState extends State<Navigation> with SingleTickerProviderStateM
     );
 
     // Load profile langsung di Navigation
-    final ctrl = context.read<SettingProfileController>();
-    final authCtrl = context.read<AuthController>();
-    final userId = authCtrl.user?['id'] ?? 0;
-    ctrl.loadProfile(userId);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final ctrl = context.read<SettingProfileController>();
+      final authCtrl = context.read<AuthController>();
+      final userId = authCtrl.user?['id'] ?? 0;
+      ctrl.loadProfile(userId);
+    });
   }
 
   @override
@@ -198,17 +200,20 @@ class _NavigationState extends State<Navigation> with SingleTickerProviderStateM
               cancelText: "Cancel",
               isWarning: true,
               isDarkMode: ctrl.isDarkMode,
-
               onConfirm: () async {
-                /// 🔐 Hapus token + reset auth state
+                final navigator = Navigator.of(context);
+
                 await context.read<AuthController>().logout();
-                if (mounted) {
-                  Navigator.of(context).pushAndRemoveUntil(
+
+                if (!mounted) return;
+
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  navigator.pushAndRemoveUntil(
                     MaterialPageRoute(builder: (_) => const AuthGuard()),
                         (route) => false,
                   );
-                }
-              },
+                });
+              }
             );
           },
         ),
@@ -352,16 +357,18 @@ class _NavigationState extends State<Navigation> with SingleTickerProviderStateM
                     cancelText: "Cancel",
                     isWarning: true,
                     isDarkMode: ctrl.isDarkMode,
-                    onConfirm: () async {
-                      /// 🔐 Hapus token + reset auth state
-                      await context.read<AuthController>().logout();
-                      if (mounted) {
-                        Navigator.of(context).pushAndRemoveUntil(
-                          MaterialPageRoute(builder: (_) => const AuthGuard()),
-                              (route) => false,
-                        );
+                      onConfirm: () async {
+                        await context.read<AuthController>().logout();
+
+                        if (mounted) {
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(builder: (_) => const AuthGuard()),
+                                  (route) => false,
+                            );
+                          });
+                        }
                       }
-                    },
                   );
                 },
                 icon: const Icon(Icons.logout),
