@@ -1,6 +1,6 @@
 # 🚀 FinTrack App
 
-FinTrack adalah aplikasi modern untuk manajemen keuangan pribadi yang dapat berjalan di **Mobile (Android)** dan **Web**.
+FinTrack adalah aplikasi modern untuk manajemen keuangan pribadi yang dapat berjalan di **Web** dan **Mobile (Android)**.
 Dirancang dengan fokus pada **user experience, performa, dan clean architecture**, FinTrack menggunakan **Flutter** sebagai frontend (cross-platform) dan **Golang (Gin)** sebagai backend.
 
 Dengan arsitektur ini, satu codebase frontend dapat digunakan untuk **multi-platform deployment**, menjadikan aplikasi lebih efisien dan scalable.
@@ -9,6 +9,21 @@ Dengan arsitektur ini, satu codebase frontend dapat digunakan untuk **multi-plat
 
 ## 📱 Preview
 
+<img width="958" height="433" alt="image" src="https://github.com/user-attachments/assets/fd4226e1-22c0-4a09-849d-aa84be995af4" />
+
+<img width="956" height="431" alt="image" src="https://github.com/user-attachments/assets/832370ac-07bd-40e3-ad85-cac2031500d4" />
+
+<img width="956" height="436" alt="image" src="https://github.com/user-attachments/assets/50b85376-c6a3-459f-aee1-8a6c723a8492" />
+
+<img width="959" height="431" alt="image" src="https://github.com/user-attachments/assets/d4bfb5da-8397-4a03-834b-ce2a0f16d1d9" />
+
+<img width="959" height="434" alt="image" src="https://github.com/user-attachments/assets/125d8b07-1b08-4aac-a3c9-7d227a0f22e1" />
+
+<img width="959" height="434" alt="image" src="https://github.com/user-attachments/assets/65cdac16-c80e-4e7d-bef7-13f67f682e71" />
+
+<img width="959" height="434" alt="image" src="https://github.com/user-attachments/assets/66881237-ff3d-4448-bd0c-45b1bf6d84b1" />
+
+<img width="959" height="436" alt="image" src="https://github.com/user-attachments/assets/1de7189b-898f-40fb-8f9d-9e6e86f1f697" />
 
 
 ---
