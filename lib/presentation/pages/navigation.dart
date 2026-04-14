@@ -261,6 +261,8 @@ class _NavigationState extends State<Navigation> with SingleTickerProviderStateM
 
   Widget _buildAppBar(Responsive responsive) {
     final ctrl = context.watch<SettingProfileController>();
+    final authCtrl = context.read<AuthController>();
+    final userId = authCtrl.user?['id'] ?? 0;
     return Container(
       margin: responsive.isMobile
           ? const EdgeInsets.only(top: 20)
@@ -335,12 +337,12 @@ class _NavigationState extends State<Navigation> with SingleTickerProviderStateM
           if (!responsive.isMobile) ...[
             LanguageToggleButton(
               isEnglish: ctrl.isEnglish,
-              onChanged: (value) => ctrl.setLanguage(value, 8),
+              onChanged: (value) => ctrl.setLanguage(value, userId),
             ),
             SizedBox(width: responsive.size(mobile: 12, tablet: 14, desktop: 16)),
           ],
           IconButton(
-            onPressed: () => ctrl.setDarkMode(!ctrl.isDarkMode, 8),
+            onPressed: () => ctrl.setDarkMode(!ctrl.isDarkMode, userId),
             icon: Icon(ctrl.isDarkMode ? Icons.light_mode : Icons.dark_mode),
           ),
           SizedBox(width: responsive.size(mobile: 12, tablet: 14, desktop: 20)),
