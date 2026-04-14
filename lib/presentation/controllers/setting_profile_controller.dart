@@ -123,22 +123,20 @@ class SettingProfileController with ChangeNotifier {
 
       phoneController.text = tempPhone;
 
+      // ===== FIX IMAGE LOAD (WEB + MOBILE) =====
       if (imageUrl != null && imageUrl.isNotEmpty) {
         try {
-          // coba localhost dulu
-          final fullUrl = "http://localhost:8080$imageUrl";
+          // ambil base URL TANPA /api
+          final baseUrl = ApiService.baseUrl.replaceAll('/api', '');
+
+          final fullUrl = "$baseUrl$imageUrl";
+
           final bytes = await ApiService.fetchImageBytes(fullUrl);
+
           imageBytes = bytes;
         } catch (e) {
-          try {
-            // fallback ke 127.0.0.1
-            final fullUrl = "http://127.0.0.1:8080$imageUrl";
-            final bytes = await ApiService.fetchImageBytes(fullUrl);
-            imageBytes = bytes;
-          } catch (e) {
-            print("Failed to load profile image: $e");
-            imageBytes = null;
-          }
+          print("❌ Failed to load profile image: $e");
+          imageBytes = null;
         }
       }
       notifyListeners();
