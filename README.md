@@ -87,6 +87,31 @@ FinTrack bukan sekadar aplikasi pencatatan keuangan biasa. Project ini menunjukk
 
 ---
 
+
+## 🧠 Tech Stack
+
+### 📱 Frontend (Mobile & Web)
+
+* Flutter (Cross-platform)
+* Provider (State Management)
+* Dio (Networking)
+* Responsive UI System
+
+### ⚙️ Backend
+
+* Golang
+* Gin Framework
+* GORM (ORM)
+* JWT Authentication
+* RESTful API
+
+### 🗄️ Database
+
+* PostgreSQL
+
+---
+
+
 ## 🔥 Key Features
 
 ### 🔐 Authentication System
@@ -122,29 +147,6 @@ FinTrack bukan sekadar aplikasi pencatatan keuangan biasa. Project ini menunjukk
 * Edit profile
 * Upload foto profil
 * Preferences (dark mode, language *(on process)*)
-
----
-
-## 🧠 Tech Stack
-
-### 📱 Frontend (Mobile & Web)
-
-* Flutter (Cross-platform)
-* Provider (State Management)
-* Dio (Networking)
-* Responsive UI System
-
-### ⚙️ Backend
-
-* Golang
-* Gin Framework
-* GORM (ORM)
-* JWT Authentication
-* RESTful API
-
-### 🗄️ Database
-
-* PostgreSQL
 
 ---
 
