@@ -275,21 +275,16 @@ flutter run -d chrome
 
 
 
-## 👨‍💻 About Me
 
-Saya adalah developer yang fokus pada:
+## 👨‍💻 Author
 
-* Mobile App Development (Flutter)
-* Backend Development (Golang, Node.js)
-* System Design & Clean Architecture
+**Rizki Esa Fadillah**  
+Web & Mobile Developer  
 
-Project ini dibuat sebagai bagian dari portfolio untuk menunjukkan kemampuan dalam membangun aplikasi **fullstack cross-platform end-to-end**.
+- 🌐 GitHub  : https://github.com/Rizki-Esa  
+- 💼 LinkedIn: https://www.linkedin.com/in/rizki-esa-fadillah  
+- 📧 Email   : rizkiiesafadillah03@gmail.com  
 
+---
 
-## ⭐ Support
-
-Kalau project ini membantu atau menarik:
-
-* ⭐ Star repository ini
-* 🍴 Fork untuk eksplorasi
-* 📩 Feel free untuk diskusi atau feedback
+⭐ Jika project ini bermanfaat, jangan ragu untuk memberikan star pada repository ini.
