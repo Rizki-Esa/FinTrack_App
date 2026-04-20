@@ -7,11 +7,47 @@ Dengan arsitektur ini, satu codebase frontend dapat digunakan untuk **multi-plat
 
 ---
 
-# Preview Aplikasi
+# 📱 Preview Fintrack App (Mobile)
 
 ## Authentication (Login & Register)
 
-Tampilan autentikasi dirancang sederhana dan intuitif untuk memudahkan pengguna dalam mengakses aplikasi.
+<p align="center">
+  <img width="300" alt="WhatsApp Image 2026-04-14 at 18 01 11 (1)" src="https://github.com/user-attachments/assets/0f9985da-ee99-4d98-9075-9d43a46b3f59" />
+  <img width="300" alt="WhatsApp Image 2026-04-14 at 18 01 11" src="https://github.com/user-attachments/assets/cd29b7ad-146f-4417-b9fa-f72cb15ebb46" />
+</p>
+
+---
+
+## Dashboard Overview & Financial Management
+
+<p align="center">
+  <img width="300" alt="WhatsApp Image 2026-04-14 at 18 01 11 (2)" src="https://github.com/user-attachments/assets/fa9e0388-ddb6-4364-a3ed-2d0b564b215a" />
+  <img width="300" alt="WhatsApp Image 2026-04-14 at 18 01 11 (3)" src="https://github.com/user-attachments/assets/4e5defe5-c820-4b80-ad3d-feb1d9e43340" />
+</p>
+
+---
+
+## Transaction History
+
+<p align="center">
+  <img width="300" alt="WhatsApp Image 2026-04-14 at 18 01 11 (4)" src="https://github.com/user-attachments/assets/f0ac42e3-f512-4484-b2f7-baee5b66f3f7" />
+  <img width="300" alt="WhatsApp Image 2026-04-14 at 18 01 11 (5)" src="https://github.com/user-attachments/assets/e5ebbdef-38f3-4a15-93a0-9e71d91f02ed" />
+
+</p>
+
+---
+
+## User Setting
+
+<p align="center">
+  <img width="300" alt="WhatsApp Image 2026-04-14 at 18 01 11 (6)" src="https://github.com/user-attachments/assets/b941d90e-fffb-49b5-9709-52016c147330" />
+</p>
+
+---
+
+# Preview Fintrack App (Web)
+
+## Authentication (Login & Register)
 
 <img width="750" alt="Login Screen" src="https://github.com/user-attachments/assets/fd4226e1-22c0-4a09-849d-aa84be995af4" /><br>
 
@@ -19,13 +55,9 @@ Tampilan autentikasi dirancang sederhana dan intuitif untuk memudahkan pengguna 
 
 ## Dashboard Overview
 
-Dashboard menampilkan ringkasan kondisi keuangan pengguna secara real-time, termasuk total pemasukan, pengeluaran, dan grafik analisis.
-
 <img width="750" alt="Dashboard Overview" src="https://github.com/user-attachments/assets/50b85376-c6a3-459f-aee1-8a6c723a8492" />
 
 ## Financial Management
-
-Fitur ini memungkinkan pengguna untuk mencatat transaksi serta melihat distribusi keuangan dalam bentuk visual.
 
 <img width="750" alt="Financial Input" src="https://github.com/user-attachments/assets/d4bfb5da-8397-4a03-834b-ce2a0f16d1d9" /><br>
 
@@ -33,15 +65,11 @@ Fitur ini memungkinkan pengguna untuk mencatat transaksi serta melihat distribus
 
 ## Transaction History
 
-Menampilkan daftar transaksi secara terstruktur untuk membantu pengguna melacak aktivitas keuangan.
-
 <img width="750" alt="Transaction History" src="https://github.com/user-attachments/assets/65cdac16-c80e-4e7d-bef7-13f67f682e71" /><br>
 
 <img width="750" alt="Transaction Detail" src="https://github.com/user-attachments/assets/66881237-ff3d-4448-bd0c-45b1bf6d84b1" />
 
 ## User Settings
-
-Pengguna dapat mengelola profil, preferensi aplikasi, dan pengaturan lainnya sesuai kebutuhan.
 
 <img width="750" alt="Settings Screen" src="https://github.com/user-attachments/assets/1de7189b-898f-40fb-8f9d-9e6e86f1f697" />
 
