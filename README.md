@@ -275,7 +275,7 @@ flutter run -d chrome
 
 
 
-<br>## 👨‍💻 About Me
+## 👨‍💻 About Me
 
 Saya adalah developer yang fokus pada:
 
