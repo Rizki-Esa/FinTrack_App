@@ -274,26 +274,6 @@ flutter run
 flutter run -d chrome
 ```
 
----
-
-## 🔐 Security Implementation
-
-* Password hashing menggunakan bcrypt
-* JWT token-based authentication
-* Secure storage di client
-* Protected routes di backend
-* Environment-based configuration (.env separation)
-
----
-
-## 📦 Important Notes
-
-* Gunakan `API_BASE_URL` untuk **mobile device (IP lokal)**
-* Gunakan `API_BASE_URL_WEB` untuk **web (localhost)**
-* Pastikan backend sudah running sebelum frontend
-* Jangan commit file `.env` ke repository (gunakan `.gitignore`)
-
----
 
 ## 👨‍💻 About Me
 
@@ -305,7 +285,6 @@ Saya adalah developer yang fokus pada:
 
 Project ini dibuat sebagai bagian dari portfolio untuk menunjukkan kemampuan dalam membangun aplikasi **fullstack cross-platform end-to-end**.
 
----
 
 ## ⭐ Support
 
@@ -314,5 +293,3 @@ Kalau project ini membantu atau menarik:
 * ⭐ Star repository ini
 * 🍴 Fork untuk eksplorasi
 * 📩 Feel free untuk diskusi atau feedback
-
----
