@@ -260,7 +260,6 @@ API_BASE_URL_WEB=http://localhost:8080/api
   API_BASE_URL_WEB=https://your-domain.com/api
   ```
 
-```
 
 #### ▶️ Run Mobile
 
@@ -272,11 +271,11 @@ flutter run
 
 ```
 flutter run -d chrome
+```
 
 
 
-
-## 👨‍💻 About Me
+<br>## 👨‍💻 About Me
 
 Saya adalah developer yang fokus pada:
 
